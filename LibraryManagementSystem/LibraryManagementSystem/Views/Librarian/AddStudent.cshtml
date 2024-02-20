@@ -1,0 +1,45 @@
+﻿@model LibraryManagementSystem.Models.Student
+
+@{
+    ViewBag.Title = "Add Student";
+}
+
+<h2>Add Student</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserName)
+        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PhoneNumber)
+        @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password)
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ConfirmPassword)
+        @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Student</button>
+    <a href="@Url.Action("LibrarianDashboard", "Librarian")" class="btn btn-primary">Back to Dashboard</a>
+}

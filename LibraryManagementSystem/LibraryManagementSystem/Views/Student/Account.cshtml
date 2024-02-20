@@ -1,0 +1,16 @@
+﻿@model LibraryManagementSystem.Models.Student
+
+@{
+    ViewBag.Title = "Account";
+}
+
+<h2>Student Account</h2>
+
+<div>
+    <p><strong>Student ID:</strong> @Model.Id</p>
+    <p><strong>Full Name:</strong> @Model.Name</p>
+    <p><strong>Username:</strong> @Model.UserName</p>
+    <p><strong>Phone Number:</strong> @Model.PhoneNumber</p>
+</div>
+
+<a href="@Url.Action("StudentDashboard", "Student")" class="btn btn-primary">Back to Dashboard</a>

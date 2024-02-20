@@ -1,0 +1,37 @@
+﻿@*@{
+        ViewBag.Title = "Student Dashboard";
+    }
+
+    <h2>Welcome, @ViewBag.WelcomeMessage</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <a href="#" class="btn btn-primary btn-lg">Account</a>
+        </div>
+        <div class="col-md-6">
+            <a href="#" class="btn btn-primary btn-lg">Book Reports</a>
+        </div>
+    </div>*@
+
+@{
+    ViewBag.Title = "Student Dashboard";
+}
+
+<h2>Welcome Student</h2>
+
+<div class="list-group">
+    <a href="@Url.Action("Account", "Student")" class="list-group-item">Account</a>
+    <a href="@Url.Action("BookReports", "Student")" class="list-group-item">Book Reports</a>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+else
+{ <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}

@@ -1,0 +1,38 @@
+﻿@model LibraryManagementSystem.Models.Publication
+
+@{
+    ViewBag.Title = "Add Publication";
+}
+
+<h2>Add Publication</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookName)
+        @Html.TextBoxFor(model => model.BookName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.BookName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookId)
+        @Html.TextBoxFor(model => model.BookId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.BookId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AuthorName)
+        @Html.TextBoxFor(model => model.AuthorName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.AuthorName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PublisherName)
+        @Html.TextBoxFor(model => model.PublisherName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PublisherName, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Publication</button>
+}

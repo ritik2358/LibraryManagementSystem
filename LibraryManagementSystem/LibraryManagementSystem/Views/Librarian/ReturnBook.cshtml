@@ -1,0 +1,35 @@
+﻿@model LibraryManagementSystem.Models.ReturnBookViewModel
+
+@{
+    ViewBag.Title = "Return Book";
+}
+
+<h2>Return Book</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookId)
+        @Html.TextBoxFor(model => model.BookId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.BookId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StudentUserName)
+        @Html.TextBoxFor(model => model.StudentUserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.StudentUserName, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Return Book</button>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<a href="@Url.Action("LibrarianDashboard", "Librarian")" class="btn btn-primary">Back to Dashboard</a>

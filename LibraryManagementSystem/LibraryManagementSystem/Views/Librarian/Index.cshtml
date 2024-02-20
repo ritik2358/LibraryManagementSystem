@@ -1,0 +1,18 @@
+﻿=@{
+    ViewBag.Title = "Librarian Login/SignUp";
+}
+
+<h2>Welcome, Librarian!</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Already a Librarian?</h3>
+        <p>Click below to login:</p>
+        <p><a href="@Url.Action("LibrarianLogin", "Librarian")" class="btn btn-primary">Login</a></p>
+    </div>
+    <div class="col-md-6">
+        <h3>New Here?</h3>
+        <p>Register now to become a librarian:</p>
+        <p><a href="@Url.Action("LibrarianSignUp", "Librarian")" class="btn btn-success">Register</a></p>
+    </div>
+</div>

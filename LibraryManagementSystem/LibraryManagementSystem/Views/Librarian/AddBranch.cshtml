@@ -1,0 +1,32 @@
+﻿@model LibraryManagementSystem.Models.Branch
+
+@{
+    ViewBag.Title = "Add Branch";
+}
+
+<h2>Add Branch</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookName)
+        @Html.TextBoxFor(model => model.BookName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.BookName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BookId)
+        @Html.TextBoxFor(model => model.BookId, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.BookId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BranchName)
+        @Html.TextBoxFor(model => model.BranchName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.BranchName, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Branch</button>
+}

@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <div class="container">
+        <h1 class="text-center mb-5">Welcome to Library Management System!!!</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card bg-light mb-4">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Librarian</h2>
+                        <p class="card-text">Click here if you are a Librarian</p>
+                        <a href="@Url.Action("Index", "Librarian")" class="btn btn-primary btn-block">Librarian</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-light mb-4">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Student</h2>
+                        <p class="card-text">Click here if you are a Student</p>
+                        <a href="@Url.Action("StudentLogin", "Student")" class="btn btn-primary btn-block">Student</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

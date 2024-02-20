@@ -1,0 +1,36 @@
+﻿@model List<LibraryManagementSystem.Models.IssuedBook>
+
+@{
+    ViewBag.Title = "Book Reports";
+}
+
+<h2>Book Reports</h2>
+
+@if (Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book Name</th>
+                <th>Issued Date</th>
+                <th>Returned Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var issuedBook in Model)
+            {
+                <tr>
+                    <td>@issuedBook.Book.BookName</td>
+                    <td>@issuedBook.IssueDate.ToString("MM/dd/yyyy")</td>
+                    <td>@(issuedBook.ReturnDate != DateTime.MinValue ? issuedBook.ReturnDate.ToString("MM/dd/yyyy") : "Active")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Book Issued</p>
+}
+
+<a href="@Url.Action("StudentDashboard", "Student")" class="btn btn-primary">Back to Dashboard</a>
